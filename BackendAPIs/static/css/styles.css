@@ -1,0 +1,93 @@
+/* Path: static/css/styles.css */
+
+body {
+    margin: 0;
+    font-family: 'Tenor Sans', sans-serif; /* Default font for the page */
+    background-color: #E7EFE1; /* Match background color */
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center; /* Center the login container horizontally */
+    align-items: center; /* Center the login container vertically */
+    background-color: #E7EFE1; 
+}
+
+.left-panel {
+    width: 682.67px;
+    height: 767.26px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-panel img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-form {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-form h2 {
+    font-family: 'Body Grotesque Fit Trial', sans-serif; /* Custom font for the title */
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #4A4A4A; /* Color to match the design */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    color: #4A4A4A;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 30px; /* Rounded corners for input fields */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
+    color: #4A4A4A;
+    background-color: #CFD8E3;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    background-color: #6E75A8;
+    color: white;
+    cursor: pointer;
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+button[type="submit"]:hover {
+    background-color: #5A659A;
+}

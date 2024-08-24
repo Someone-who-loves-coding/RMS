@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Peripherals</title>
+    <link rel="stylesheet" href="{% static 'css\requestform.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="request-peripherals">
+        <h1>Request <br> Peripherals</h1>
+      </div>
+
+      <div class="form-container">
+        <div class="division-info">
+          <h2>Division: {{employee_data.department}}</h2>
+          <p><strong>NAME:</strong>{{ employee_data.empname }}</p>
+          <p><strong>DESIGNATION:</strong> {{ employee_data.designation }}</p>
+        </div>
+
+        <form id="requestForm">
+          <div class="radio-group">
+            <input
+              type="radio"
+              id="software"
+              name="category"
+              value="Software"
+            />
+            <label for="software">Software</label>
+
+            <input
+              type="radio"
+              id="hardware"
+              name="category"
+              value="Hardware"
+              checked
+            />
+            <label for="hardware">Hardware</label>
+          </div>
+
+          <div class="subject-group">
+            <label for="subject">Subject: Request for</label>
+            <select id="subject" name="subject">
+              <!-- Options populated via JavaScript -->
+            </select>
+          </div>
+
+          <div class="reason-group">
+            <label for="reason">Reason:</label>
+            <textarea
+              id="reason"
+              name="reason"
+              maxlength="400"
+              placeholder="Explain your reason..."
+            ></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn">SUBMIT</button>
+        </form>
+
+        <div id="submissionMessage" class="hidden">
+          <p>Application Successfully Submitted</p>
+          <a href="{% url 'dashboard' %}" id="backToDashboard">Go back to dashboard</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

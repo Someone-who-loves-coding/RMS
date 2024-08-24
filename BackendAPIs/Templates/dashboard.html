@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Left Panel -->
+      <div class="dashboard-left-panel">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+          <h2>Welcome</h2>
+          <h1>{{ employee_data.empname }}</h1>
+          <p>{{ employee_data.designation }}</p>
+          <p>RO: {{ employee_data.reportingofficer }}</p>
+        </div>
+
+        <!-- Status Boxes -->
+        <div class="status-box">
+          <div class="device-icon">
+            <img src="{% static 'assets/Mouse.png' %}" alt="Mouse Icon" />
+          </div>
+          <div class="status-info">
+            <p>STATUS: On Hold</p>
+            <p>Currently Under: GM (IT)</p>
+            <p>Reason:</p>
+          </div>
+        </div>
+
+        <div class="status-box">
+          <div class="device-icon">
+            <img src="{% static 'assets/keyboard.png' %}" alt="Keyboard Icon" />
+          </div>
+          <div class="status-info">
+            <p>STATUS: On Hold</p>
+            <p>Currently Under: GM (IT)</p>
+            <p>Reason:</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel (Navigation Bar) -->
+      <div class="dashboard-right-panel">
+        <ul class="nav-bar">
+          <li>
+            <a href="#"><img src="{% static 'assets/home.png' %}" alt="Home Icon" /> Home</a>
+          </li>
+          <li>
+            <a href="{% url 'request' %}"><img src="{% static 'assets/document.png' %}" alt="Request Form Icon" /> Request Form</a>
+          </li>
+          <li>
+            <a href="#"><img src="{% static 'assets/peripherals.png' %}" alt="Peripherals Icon" /> Peripherals</a>
+          </li>
+          <li>
+            <a href="#"><img src="{% static 'assets/bell.png' %}" alt="Review Applications Icon" /> Review Applications</a>
+          </li>
+          <li>
+            <a href="#"><img src="{% static 'assets/applicationstatus.png' %}" alt="Application Status Icon" /> Application Status</a>
+          </li>
+          <li>
+            <a href="#"><img src="{% static 'assets/user.png' %}" alt="Consultants Icon" /> Consultants</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

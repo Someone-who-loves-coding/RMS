@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="left-panel">
+        <img src="{% static 'assets/cliplogin.png' %}" alt="Illustration" />
+      </div>
+      <div class="right-panel">
+        <div class="login-form">
+          <h2>Login</h2>
+          <form id="login-form" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="empid">Employee ID</label>
+              <input type="text" id="empid" name="empid" required />
+            </div>
+            <div class="form-group" id="otp-group" style="display: none">
+              <label for="otp">OTP</label>
+              <input type="text" id="otp" name="otp" />
+            </div>
+            <button type="submit" id="submit-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#login-form").on("submit", function (event) {
+          event.preventDefault();
+
+          const empid = $("#empid").val();
+          const otp = $("#otp").val();
+
+          $.ajax({
+            type: "POST",
+            url: "",
+            data: {
+              empid: empid,
+              otp: otp,
+              csrfmiddlewaretoken: "{{ csrf_token }}",
+            },
+            success: function (response) {
+              if (response.status === "OTP sent") {
+                $("#otp-group").show();
+                $("#submit-btn").text("Verify OTP");
+              } else if (response.status === "OTP verified") {
+                alert("Login successful!");
+                // Redirect to the desired page after successful login
+                window.location.href = "/dashboard/";
+              } else {
+                alert(response.message);
+              }
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
