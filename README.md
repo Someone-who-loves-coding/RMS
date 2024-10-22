@@ -12,11 +12,11 @@ A digital system designed to streamline the process of requesting peripherals fo
 
 ![User Request Submission](assets/HomePage.png)
 
-#### 2. Peripheral Tracker
+#### 3. Peripheral Tracker
 
 ![Approval Process Workflow](assets/Peripherals.png)
 
-#### 3. Sequence Flow of the Request Approval
+#### 4. Sequence Flow of the Request Approval
 
 ![Sequence Diagram](assets/RequestFlow.png)
 
